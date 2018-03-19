@@ -2,6 +2,7 @@ pico-8 cartridge // http://www.pico-8.com
 version 16
 __lua__
 t=0
+no_chickens=10
 
 function _update()
   t+=1
@@ -10,6 +11,13 @@ end
 function _draw()
   cls()
   spr(1,64,64+sin(t/20)*5)
+  for i=1,10 do
+    spr(
+      2,
+      cos(t/100+i/no_chickens)*50+64,
+      sin(t/100+i/no_chickens)*50+64
+    )
+  end
 end
 __gfx__
 00000000037700000057650000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
